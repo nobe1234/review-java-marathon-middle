@@ -22,7 +22,7 @@ public class BaseballTeamRepository {
 		baseballTeam.setId(rs.getInt("id"));
 		baseballTeam.setLeagueName(rs.getString("league_name"));
 		baseballTeam.setTeamName(rs.getString("team_name"));
-		baseballTeam.setHeadquarter(rs.getString("headquarters"));
+		baseballTeam.setHeadquarters(rs.getString("headquarters"));
 		baseballTeam.setInaguration(rs.getString("inauguration"));
 		baseballTeam.setHistory(rs.getString("history"));
 		
@@ -31,7 +31,7 @@ public class BaseballTeamRepository {
 	
 	public List<BaseballTeam> findAll(){
 		String sql = "select id,league_name,team_name,headquarters,inauguration,history from baseball_teams"
-				+ "order by id";
+				+ " order by id";
 		List<BaseballTeam> teamList = template.query(sql, BASEBALLTEAM_ROW_MAPPER);
 		
 		return teamList;
@@ -39,7 +39,7 @@ public class BaseballTeamRepository {
 	
 	public BaseballTeam load(Integer id) {
 		String sql = "select id,league_name,team_name,headquarters,inauguration,history from baseball_teams"
-				+ "where id = :id";
+				+ " where id = :id";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 		BaseballTeam teamInfomation = template.queryForObject(sql, param, BASEBALLTEAM_ROW_MAPPER);
 		

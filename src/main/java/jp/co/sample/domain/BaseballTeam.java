@@ -5,14 +5,22 @@ public class BaseballTeam {
 	private Integer id;
 	private String leagueName;
 	private String teamName;
-	private String headquarter;
+	private String headquarters;
 	private String inaguration;
 	private String history;
 
+	public String getHeadquarters() {
+		return headquarters;
+	}
+
+	public void setHeadquarters(String headquarters) {
+		this.headquarters = headquarters;
+	}
+
 	@Override
 	public String toString() {
-		return "BaseballTeam [id=" + id + ", leagueName=" + leagueName + ", teamName=" + teamName + ", headquarter="
-				+ headquarter + ", inaguration=" + inaguration + ", history=" + history + "]";
+		return "BaseballTeam [id=" + id + ", leagueName=" + leagueName + ", teamName=" + teamName + ", headquarters="
+				+ headquarters + ", inaguration=" + inaguration + ", history=" + history + "]";
 	}
 
 	public Integer getId() {
@@ -37,14 +45,6 @@ public class BaseballTeam {
 
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
-	}
-
-	public String getHeadquarter() {
-		return headquarter;
-	}
-
-	public void setHeadquarter(String headquarter) {
-		this.headquarter = headquarter;
 	}
 
 	public String getInaguration() {
